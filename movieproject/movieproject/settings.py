@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ddhbx0e3j#j#$ni=15lv#%#-0^l)$q1bgqp&12g=^g4$+=68!c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # For testing, later you can put your real Railway URL
+
 
 
 # Application definition
@@ -53,6 +54,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -84,16 +86,25 @@ WSGI_APPLICATION = 'movieproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+import os
+import pymysql
+from dotenv import load_dotenv
+
+load_dotenv()
+pymysql.install_as_MySQLdb()
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbapi',  # Replace with your database name
-        'USER': 'root',      # Replace with your MySQL username
-        'PASSWORD': '123!@#leang',  # Replace with your MySQL password
-        'HOST': 'localhost',  # Set to the MySQL server host (localhost if it's local)
-        'PORT': '3306',  # Default MySQL port
+        'NAME': os.getenv('MYSQLDATABASE', 'dbapi'),
+        'USER': os.getenv('MYSQLUSER', 'root'),
+        'PASSWORD': os.getenv('MYSQLPASSWORD', '123!@#leang'),
+        'HOST': os.getenv('MYSQLHOST', 'localhost'),
+        'PORT': os.getenv('MYSQLPORT', '3306'),
     }
 }
+
 
 
 # Password validation
@@ -130,6 +141,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = 'static/'
 
 # Default primary key field type
