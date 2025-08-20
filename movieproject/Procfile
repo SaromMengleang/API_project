@@ -1,2 +1,3 @@
-web: gunicorn movieproject.wsgi --log-file -
+web: gunicorn movieproject.wsgi --bind 0.0.0.0:$PORT
+
 
