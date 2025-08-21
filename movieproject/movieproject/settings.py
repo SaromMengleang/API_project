@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ddhbx0e3j#j#$ni=15lv#%#-0^l)$q1bgqp&12g=^g4$+=68!c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['apiproject-production-803d.up.railway.app']  # For testing, later you can put your real Railway URL
+ALLOWED_HOSTS = ['*']  # For testing, later you can put your real Railway URL
 
 
 
