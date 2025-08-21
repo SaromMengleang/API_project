@@ -102,10 +102,10 @@ pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('MYSQLDATABASE', 'dbapi'),
+        'NAME': os.getenv('MYSQLDATABASE', 'railway'),
         'USER': os.getenv('MYSQLUSER', 'root'),
-        'PASSWORD': os.getenv('MYSQLPASSWORD', '123!@#leang'),
-        'HOST': os.getenv('MYSQLHOST', 'localhost'),
+        'PASSWORD': os.getenv('MYSQLPASSWORD', 'UKWLpdHReKNyuecYWKGfOdODKJVUazOz'),
+        'HOST': os.getenv('MYSQLHOST', 'api_project.railway.internal'),
         'PORT': os.getenv('MYSQLPORT', '3306'),
     }
 }
