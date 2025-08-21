@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-ddhbx0e3j#j#$ni=15lv#%#-0^l)$q1bgqp&12g=^g4$+=68!c
 DEBUG = False
 
 ALLOWED_HOSTS = ['apiproject-production-803d.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['apiproject-production-803d.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://apiproject-production-803d.up.railway.app']
+
  # For testing, later you can put your real Railway URL
 
 
