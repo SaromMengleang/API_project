@@ -86,20 +86,24 @@ WSGI_APPLICATION = 'movieproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+import os
+import pymysql
+from dotenv import load_dotenv
 
+load_dotenv()
+pymysql.install_as_MySQLdb()
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbapi',
-        'USER': 'root',
-        'PASSWORD': '123!@#leang',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.getenv('MYSQLDATABASE', 'dbapi'),
+        'USER': os.getenv('MYSQLUSER', 'root'),
+        'PASSWORD': os.getenv('MYSQLPASSWORD', '123!@#leang'),
+        'HOST': os.getenv('MYSQLHOST', 'localhost'),
+        'PORT': os.getenv('MYSQLPORT', '3306'),
     }
 }
-
 
 
 
