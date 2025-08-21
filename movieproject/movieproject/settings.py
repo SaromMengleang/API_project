@@ -105,7 +105,7 @@ DATABASES = {
         'NAME': os.getenv('MYSQLDATABASE', 'railway'),
         'USER': os.getenv('MYSQLUSER', 'root'),
         'PASSWORD': os.getenv('MYSQLPASSWORD', 'UKWLpdHReKNyuecYWKGfOdODKJVUazOz'),
-        'HOST': os.getenv('MYSQLHOST', 'api_project.railway.internal'),
+        'HOST': os.getenv('MYSQLHOST', 'mysql.railway.internal'),
         'PORT': os.getenv('MYSQLPORT', '3306'),
     }
 }
