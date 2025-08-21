@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ddhbx0e3j#j#$ni=15lv#%#-0^l)$q1bgqp&12g=^g4$+=68!c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['apiproject-production-803d.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://apiproject-production-803d.up.railway.app']
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = []
 
  # For testing, later you can put your real Railway URL
 
